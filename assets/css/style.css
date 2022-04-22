@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root{
+    --blue: #5FBCF4;
+    --white: #FFF;
+    --black: #000;
+    --gray: #888
+}
+
+li{
+    list-style: none;
+}
+
+button{
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+h1, h2{
+    font-weight: normal;
+}
+
+input{
+    border: none;
+    outline: none;
+}
+
+
+/* HELPER CLASSES */
+[role="img"]{
+    display: block;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.all{
+    background-image: url(../img/icons/file.png);
+}
+
+.today{
+    background-image: url(../img/icons/clock.png);
+}
+
+.important{
+    background-image: url(../img/icons/start.png);
+}
+
+.upcoming{
+    background-image: url(../img/icons/calendar.png);
+}
+
+.completed{
+    background-image: url(../img/icons/check.png);
+    background-size: 20px;
+}
+
+button.completed{
+    background-image: url(../img/icons/check.png);
+    background-size: 20px;
+}
+
+.add{
+    background-image: url(../img/icons/add.png);
+}
+
+.customize{
+    background-image: url(../img/icons/settings.png);
+}
+
+main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blue);
+}
+
+
+/* LATERAL MENU */
+main > aside{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 72px 20px;
+    background-color: var(--white);
+}
+
+main > aside nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+}
+
+main > aside nav ul li{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: clamp(24px, 5vw, 32px);
+}
+
+main > aside nav ul li span{
+    width: clamp(20px, 5vw, 35px);
+    height: clamp(20px, 5vw, 35px);
+}
+
+main > aside nav ul li.selected{
+    background-color: var(--blue);
+    border-radius: 50px;
+    color: var(--white);
+}
+
+main > aside nav ul li.selected span{
+    filter: invert(100%);
+}
+
+
+/* CONTENT */
+main > section{
+    width: 70%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main > section > div{
+    height: 100%;
+}
+
+main > section #content > div{
+    display: none;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+main > section #content > div::-webkit-scrollbar {
+    display: none;
+}
+
+main > section #content > div.visible{
+    display: block;
+}
+
+main > section #section-title{
+    padding: 12px;
+    color: var(--white);
+}
+
+main > section #section-title h1{
+    font-size: clamp(24px, 5vw, 72px);
+    font-weight: normal;
+    border-bottom: 3px solid var(--white);
+    padding-bottom: 12px;
+}
+
+main > section #content{
+    height: 80%;
+}
+
+main > section #content section{
+    height: 70px;
+    padding: 16px 24px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 12px 0;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+main > section #content section button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid var(--black);
+}
+
+main > section #content section > div{
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    transition: all 0.4s ease;
+}
+
+main > section #content section > span{
+    width: 40px;
+    height: 40px;
+}
+
+
+/* ADD TASK */
+main > section #add-task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: var(--white);
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+main > section #add-task div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main > section #add-task div span{
+    color: var(--gray);
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+}
+
+main > section #add-task div input{
+    color: var(--black);
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    padding: 6px 12px;
+    width: 100%;
+}
+
+main > section #add-task div select{
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    border-radius: 12px;
+    padding: 6px 12px;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    margin-right: 6px;
+    height: 36px;
+    font-size: 16px;
+}
+
+main > section #add-task div select option{
+    padding: 12px;
+}
+
+
+main > section #add-task button{
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--blue);
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    transition: 0.6s ease;
+}
+
+main > section #add-task button span{
+    width: 20px;
+    height: 20px;
+}
+
+
+@media (max-width: 991px){
+    main{
+        height: unset;
+        width: unset;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main > :is(aside, section){
+        width: 100%;
+    }
+
+    main > section{
+        padding: 24px;
+    }
+
+    main > section #content section, main > section #content section > div{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+
+    main > section #content section > div, main > section #content section button{
+        order: 2;
+    }
+
+    main > section #content section > span{
+        order: 1;
+    }
+
+    main > section #content section > div h2{
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--gray);
+    }
+
+    main > section #add-task div{
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    main > section #add-task div input, main > section #add-task div select{
+        text-align: center;
+        width: 80%;
+    }
+
+    main > section #add-task{
+        padding: 24px 12px;
+        text-align: center;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+}

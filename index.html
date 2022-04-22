@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <main>
+        <aside>
+            <nav>
+                <ul>
+                    <li id="all" class="selected">
+                        <span role="img" aria-label="All Tasks icon" class="all"></span>
+                        All
+                    </li>
+                    <li id="today">
+                        <span role="img" aria-label="Today Icon" class="today"></span>
+                        Today
+                    </li>
+                    <li id="important">
+                        <span role="img" aria-label="Important Icon" class="important"></span>
+                        Important
+                    </li>
+                    <li id="upcoming">
+                        <span role="img" aria-label="Upcoming Icon" class="upcoming"></span>
+                        Upcoming
+                    </li>
+                    <li id="completed">
+                        <span role="img" aria-label="Completed Icon" class="completed"></span>
+                        Completed
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <section>
+            
+            <div>
+                <div id="section-title">
+                    <h1>All</h1>
+                </div>
+
+                <section id="content">
+
+                    <div id="all" class="visible"></div>
+
+                    <div id="today"></div>
+
+                    <div id="important"></div>
+
+                    <div id="upcoming"></div>
+
+                    <div id="completed"></div>
+
+                </section>
+    
+                <section id="add-task">
+
+                    <div>
+                        <span role="img" aria-label="Add Tasks icon" class="add"></span>
+                        <input type="text" name="task" placeholder="Add new task...">
+                        <select name="category" id="category">
+                            <option value="today">Today</option>
+                            <option value="important">Important</option>
+                            <option value="upcoming">Upcoming</option>
+                        </select>
+                    </div>
+                    <button>
+                        <span role="img" aria-label="Costommize Tasks icon" class="completed"></span>
+                    </button>
+
+                </section>
+
+            </div>
+
+        </section>
+        
+    </main>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
