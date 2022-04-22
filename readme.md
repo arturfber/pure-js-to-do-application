@@ -9,4 +9,4 @@ Sua utilização é simples, basta baixar o projeto para sua máquina e executar
 	-	Responsividade
 	-	Código comentado
 	-	Elementos interativos com avisos ao usuário
-    -   Inserção e alteração de estado de tarefas
+    	-   	Inserção e alteração de estado de tarefas
